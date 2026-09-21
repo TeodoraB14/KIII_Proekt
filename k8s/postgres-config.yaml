@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: postgres-config
+  namespace: fullstack-app
+data:
+  POSTGRES_DB: fullstackdb
+  POSTGRES_USER: fsuser
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: postgres-secret
+  namespace: fullstack-app
+type: Opaque
+stringData:
+  POSTGRES_PASSWORD: fspass

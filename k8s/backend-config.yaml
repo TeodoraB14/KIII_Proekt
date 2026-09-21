@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: backend-config
+  namespace: fullstack-app
+data:
+  SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/fullstackdb
+  SPRING_DATASOURCE_USERNAME: fsuser
+  SPRING_JPA_HIBERNATE_DDL_AUTO: update
+  SPRING_JPA_SHOW_SQL: "false"
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: backend-secret
+  namespace: fullstack-app
+type: Opaque
+stringData:
+  stringData:
+  SPRING_DATASOURCE_PASSWORD: fspass
+  JWT_SECRET: my-super-secret-jwt-key-for-kubernetes

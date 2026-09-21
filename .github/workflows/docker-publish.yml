@@ -36,8 +36,8 @@ jobs:
           context: ./backend
           push: true
           tags: |
-            TeodoraB14/fullstack-backend:latest
-            TeodoraB14/fullstack-backend:${{ github.sha }}
+            teodorab14/fullstack-backend:latest
+            teodorab14/fullstack-backend:${{ github.sha }}
 
       - name: Build and push frontend image
         uses: docker/build-push-action@v6
@@ -45,5 +45,5 @@ jobs:
           context: ./frontend
           push: true
           tags: |
-            TeodoraB14/fullstack-frontend:latest
-            TeodoraB14/fullstack-frontend:${{ github.sha }}
+            teodorab14/fullstack-frontend:latest
+            teodorab14/fullstack-frontend:${{ github.sha }}
